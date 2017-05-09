@@ -7,7 +7,7 @@ var MyMessage = (function() {
 		//合并默认参数
 		this.dom = null;
 		this.opts = null;
-		this.setting(setting);
+		this._setting(setting);
 		this.init();
 	}
 
@@ -27,8 +27,17 @@ var MyMessage = (function() {
 		type: "normal", //消息的类型，还有success,error,warning等
 	}
 	/*设置消息的参数*/
-	message.prototype.setting = function(setting) {
+	message.prototype._setting = function(setting) {
 		this.opts = $.extend({}, message.DEFAULTS, setting);
+	}
+	message.prototype.setting = function(name, val) {
+		if("object" === typeof name) {
+			for(var k in name) {
+				this.opts[k] = name[k]
+			}
+		} else if("string" === typeof name) {
+			this.opts[name] = val;
+		}
 	}
 	/*
 	 用于添加相应的dom到body标签中
@@ -55,7 +64,7 @@ var MyMessage = (function() {
 	 * */
 	message.prototype.add = function(message, type) {
 		var domStr = "";
-		type =type||this.opts.type;
+		type = type || this.opts.type;
 		domStr += "<div class='c-message-notice' style='" +
 			"text-align:" +
 			this.opts.align +
