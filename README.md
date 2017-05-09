@@ -1,6 +1,12 @@
 # jquery.my-message
 一个消息提醒的jq插件
 
+---
+
+浏览器支持：IE8+
+
+
+
 #### html
 
 ```html
