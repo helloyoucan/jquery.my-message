@@ -53,7 +53,7 @@ $('#btn4').click(function() {
 });
 ```
 
-##### 显示结果
+#### 显示结果
 
 ![](http://opok8iwaa.bkt.clouddn.com/image/github/message/message.jpg)
 
