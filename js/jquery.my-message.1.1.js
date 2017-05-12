@@ -1,11 +1,10 @@
 /**
  * 支持浏览器:IE8+
  * */
-/*原始的模块化写法*/
 var MyMessage = (function() {
 	function message(setting) {
 		//合并默认参数
-		this.dom = null;
+		this.messageContainer = null;
 		this.opts = null;
 		this._setting(setting);
 		this.init();
@@ -54,8 +53,8 @@ var MyMessage = (function() {
 			this.opts.positions.left +
 			");bottom:" + this.opts.positions.bottom +
 			"'></div>"
-		this.dom = $(domStr);
-		this.dom.appendTo('body');
+		this.messageContainer = $(domStr);
+		this.messageContainer.appendTo($('body'))
 	}
 	/*
 	 用于添加消息到相应的标签中
@@ -91,7 +90,7 @@ var MyMessage = (function() {
 			";'></i><span style='font-size:" +
 			this.opts.messageFontSize +
 			";'>" + message + "</span></div></div>";
-		var $domStr = $(domStr).appendTo(this.dom);
+		var $domStr = $(domStr).appendTo(this.messageContainer);
 		this._hide($domStr);
 	}
 	/**
