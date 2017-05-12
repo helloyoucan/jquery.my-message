@@ -11,9 +11,9 @@
 
 ```html
 <button id="btn1">普通的</button>
-		<button id="btn2">成功的</button>
-		<button id="btn3">警告的</button>
-		<button id="btn4">错误的</button>
+<button id="btn2">成功的</button>
+<button id="btn3">警告的</button>
+<button id="btn4">错误的</button>
 ```
 
 调用方式及参数说明
