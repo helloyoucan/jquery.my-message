@@ -26,11 +26,11 @@ var message = new MyMessage.message({
 	showTime: 3000, //消失时间,默认为3000
 	align: "center", //显示的位置类型center,right,left
 	positions: { //放置信息距离周边的距离,默认为10px
-	top: "10px",
-	bottom: "10px",
-	right: "10px",
-	left: "10px"
-},
+		top: "10px",
+		bottom: "10px",
+		right: "10px",
+		left: "10px"
+	},
 	message: "这是一条消息", //消息内容,默认为"这是一条消息"
 				type: "normal", //消息的类型，还有success,error,warning等，默认为normal
 });
