@@ -29,13 +29,18 @@ var MyMessage = (function() {
 	message.prototype._setting = function(setting) {
 		this.opts = $.extend({}, message.DEFAULTS, setting);
 	}
-	message.prototype.setting = function(name, val) {
-		if("object" === typeof name) {
-			for(var k in name) {
-				this.opts[k] = name[k]
+	message.prototype.setting = function(key, val) {
+		console.log(arguments.length);
+		if(arguments.length === 1) {
+			if("object" === typeof key) {
+				for(var k in key) {
+					this.opts[k] = key[k]
+				}
 			}
-		} else if("string" === typeof name) {
-			this.opts[name] = val;
+		} else if(arguments.length === 2) {
+			if("string" === typeof key) {
+				this.opts[key] = val;
+			}
 		}
 	}
 	/*
