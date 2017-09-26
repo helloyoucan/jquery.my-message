@@ -32,7 +32,7 @@ var message = new MyMessage.message({
 		left: "10px"
 	},
 	message: "这是一条消息", //消息内容,默认为"这是一条消息"
-				type: "normal", //消息的类型，还有success,error,warning等，默认为normal
+	type: "normal", //消息的类型，还有success,error,warning等，默认为normal
 });
 /*两种不同的设置方式*/
 message.setting({
